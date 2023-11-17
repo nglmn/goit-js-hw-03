@@ -15,20 +15,27 @@
 
 // }
 // 3d 
+// function slugify(title) {
+//     title = toLowerCase(title);
+//     const stringArray = title.split(' ');
+//     for (let i = 0; i < stringArray.length - 1; i++) {
+//         const dash = "-";
+//         stringArray[i] = stringArray[i] + dash;
+//     }
+//     return stringArray.join('');
+// }
+
+// function toLowerCase(text) {
+//     return text.toLowerCase();
+// }
+//4d
 function slugify(title) {
-    title = toLowerCase(title);
-    const stringArray = title.split(' ');
-    for (let i = 0; i < stringArray.length - 1; i++) {
-        const dash = "-";
-        stringArray[i] = stringArray[i] + dash;
-    }
-    return stringArray.join('');
-}
+    title = title.toLowerCase();
+    title = title.split(' ');
+    title = title.join('-');
 
-function toLowerCase(text) {
-    return text.toLowerCase();
+    return title;
 }
-
 console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
 console.log(slugify("English for developer")); // "english-for-developer"
 console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
